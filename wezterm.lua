@@ -12,7 +12,10 @@ config.font = wezterm.font_with_fallback({{
 }})
 
 config.font_size = 14.0
-config.color_scheme = "Kanagawa (Gogh)"
+
+-- https://wezfurlong.org/wezterm/colorschemes/index.html
+config.color_scheme = 'Material Darker (base16)'
+
 config.disable_default_key_bindings = true
 config.use_ime = true
 config.default_prog = {"pwsh.exe", "-WorkingDirectory", string.format("C:\\Users\\%s\\Desktop", os.getenv("USERNAME"))}
