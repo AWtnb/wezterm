@@ -24,9 +24,7 @@ config.disable_default_key_bindings = true
 config.use_ime = true
 config.default_prog = {"pwsh.exe", "-WorkingDirectory", string.format("C:\\Users\\%s\\Desktop", os.getenv("USERNAME"))}
 
-config.default_cursor_style = "BlinkingUnderline"
-config.cursor_blink_ease_in = "Constant"
-config.cursor_blink_ease_out = "Constant"
+config.default_cursor_style = "SteadyBar"
 
 -- https://wezfurlong.org/wezterm/config/default-keys.html
 config.keys = {{
