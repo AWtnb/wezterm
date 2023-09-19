@@ -14,7 +14,7 @@ config.font = wezterm.font_with_fallback({{
 config.font_size = 14.0
 
 -- https://wezfurlong.org/wezterm/colorschemes/index.html
-config.color_scheme = "Material Darker (base16)"
+config.color_scheme = "Bamboo"
 
 config.disable_default_key_bindings = true
 config.use_ime = true
