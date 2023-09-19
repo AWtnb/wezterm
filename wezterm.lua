@@ -2,6 +2,9 @@ local wezterm = require "wezterm";
 local config = {}
 
 config.font = wezterm.font_with_fallback({{
+    family = "UDEV Gothic",
+    weight = "Regular"
+}, {
     family = "HackGen",
     weight = "Regular"
 }, {
@@ -51,8 +54,7 @@ config.keys = {{
     }
 }}
 
-config.mouse_bindings = {
-{
+config.mouse_bindings = {{
     event = {
         Up = {
             streak = 1,
