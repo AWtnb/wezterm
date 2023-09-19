@@ -1,4 +1,5 @@
 local wezterm = require "wezterm";
+local act = wezterm.action
 local config = {}
 
 config.font = wezterm.font_with_fallback({{
@@ -31,36 +32,41 @@ config.cursor_blink_ease_out = "Constant"
 config.keys = {{
     key = "c",
     mods = "CTRL|SHIFT",
-    action = wezterm.action {
+    action = act {
         CopyTo = "Clipboard"
     }
 }, {
     key = "t",
     mods = "CTRL",
-    action = wezterm.action {
+    action = act {
         SpawnTab = "CurrentPaneDomain"
     }
 }, {
     key = "Tab",
     mods = "CTRL",
-    action = wezterm.action {
+    action = act {
         ActivateTabRelative = 1
     }
 }, {
     key = "Tab",
     mods = "CTRL|SHIFT",
-    action = wezterm.action {
+    action = act {
         ActivateTabRelative = -1
     }
 }, {
     key = "w",
     mods = "CTRL",
-    action = wezterm.action.CloseCurrentTab {
+    action = act.CloseCurrentTab {
         confirm = true
     }
+}, {
+    key = "0",
+    mods = "CTRL|ALT",
+    action = act.ResetFontSize
 }}
 
 config.mouse_bindings = {{
+    -- Bind 'Up' event of CTRL-Click to open hyperlinks
     event = {
         Up = {
             streak = 1,
@@ -68,7 +74,31 @@ config.mouse_bindings = {{
         }
     },
     mods = "CTRL",
-    action = wezterm.action.OpenLinkAtMouseCursor
+    action = act.OpenLinkAtMouseCursor
+}, {
+    -- Scrolling up while holding CTRL increases the font size
+    event = {
+        Down = {
+            streak = 1,
+            button = {
+                WheelUp = 1
+            }
+        }
+    },
+    mods = "CTRL",
+    action = act.IncreaseFontSize
+}, {
+    -- Scrolling down while holding CTRL decreases the font size
+    event = {
+        Down = {
+            streak = 1,
+            button = {
+                WheelDown = 1
+            }
+        }
+    },
+    mods = "CTRL",
+    action = act.DecreaseFontSize
 }}
 
 return config
