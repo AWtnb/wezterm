@@ -29,6 +29,12 @@ config.cursor_blink_ease_out = "Constant"
 
 -- https://wezfurlong.org/wezterm/config/default-keys.html
 config.keys = {{
+    key = "c",
+    mods = "CTRL|SHIFT",
+    action = wezterm.action {
+        CopyTo = "Clipboard"
+    }
+}, {
     key = "t",
     mods = "CTRL",
     action = wezterm.action {
