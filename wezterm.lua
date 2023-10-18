@@ -19,6 +19,8 @@ config.font_size = 14.0
 
 config.front_end = "Software"
 
+config.hide_tab_bar_if_only_one_tab = true
+
 -- https://wezfurlong.org/wezterm/colorschemes/index.html
 config.color_scheme = "Bamboo"
 
