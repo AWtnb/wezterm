@@ -17,6 +17,8 @@ config.font = wezterm.font_with_fallback({{
 
 config.font_size = 14.0
 
+config.front_end = "Software"
+
 -- https://wezfurlong.org/wezterm/colorschemes/index.html
 config.color_scheme = "Bamboo"
 
