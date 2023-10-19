@@ -21,8 +21,6 @@ config.front_end = "Software"
 
 config.hide_tab_bar_if_only_one_tab = true
 
-config.window_background_opacity = 0.85
-
 -- https://wezfurlong.org/wezterm/colorschemes/index.html
 config.color_scheme = "Cobalt2"
 
