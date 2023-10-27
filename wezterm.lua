@@ -3,10 +3,10 @@ local act = wezterm.action
 local config = {}
 
 config.font = wezterm.font_with_fallback({{
-    family = "UDEV Gothic",
+    family = "HackGen",
     weight = "Regular"
 }, {
-    family = "HackGen",
+    family = "UDEV Gothic",
     weight = "Regular"
 }, {
     family = "PlemolJP Console",
