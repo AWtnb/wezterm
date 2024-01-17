@@ -38,6 +38,13 @@ config.keys = {{
         CopyTo = "Clipboard"
     }
 }, {
+    key = "v",
+    mods = "CTRL",
+    action = act {
+        PasteFrom = "Clipboard"
+    }
+
+}, {
     key = "t",
     mods = "CTRL",
     action = act {
