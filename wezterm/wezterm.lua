@@ -43,7 +43,10 @@ config.keys = {{
     action = act {
         PasteFrom = "Clipboard"
     }
-
+}, {
+    key = "U",
+    mods = "CTRL|SHIFT",
+    action = act.ActivateCopyMode
 }, {
     key = "t",
     mods = "CTRL",
