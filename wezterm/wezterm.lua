@@ -22,7 +22,7 @@ config.front_end = "OpenGL"
 config.hide_tab_bar_if_only_one_tab = true
 
 -- https://wezfurlong.org/wezterm/colorschemes/index.html
-config.color_scheme = "nightfox"
+config.color_scheme = "Molokai (Gogh)"
 
 config.disable_default_key_bindings = true
 config.use_ime = true
