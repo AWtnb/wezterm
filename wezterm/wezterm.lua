@@ -1,4 +1,9 @@
 local wezterm = require "wezterm";
+
+wezterm.on("format-window-title", function()
+    return "PowerShell"
+end)
+
 local act = wezterm.action
 local config = {}
 
