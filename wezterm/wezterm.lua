@@ -8,14 +8,14 @@ local act = wezterm.action
 local config = {}
 
 config.font = wezterm.font_with_fallback({{
+    family = "PlemolJP Console",
+    weight = "Medium"
+}, {
     family = "HackGen",
     weight = "Regular"
 }, {
     family = "UDEV Gothic",
     weight = "Regular"
-}, {
-    family = "PlemolJP Console",
-    weight = "Medium"
 }, {
     family = "MS Gothic"
 }})
