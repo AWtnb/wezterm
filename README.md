@@ -3,9 +3,7 @@
 
 ## Install
 
-```PowerShell
-$d = "wezterm"; New-Item -Path ($env:USERPROFILE | Join-Path -ChildPath ".config" | Join-Path -ChildPath $d) -Value ($pwd.Path | Join-Path -ChildPath $d) -ItemType Junction
-```
+Run [`install.ps1`](./install.ps1) to create junction of `wezterm` to `.config` directory.
 
 ---
 
