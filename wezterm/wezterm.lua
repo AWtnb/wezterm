@@ -21,13 +21,10 @@ config.font = wezterm.font_with_fallback({{
 }})
 
 config.font_size = 14.0
-
-config.front_end = "OpenGL"
-
 config.hide_tab_bar_if_only_one_tab = true
 
 -- https://wezfurlong.org/wezterm/colorschemes/index.html
-config.color_scheme = "Molokai (Gogh)"
+config.color_scheme = "kanagawabones"
 
 config.disable_default_key_bindings = true
 config.use_ime = true
