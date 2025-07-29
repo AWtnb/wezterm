@@ -34,18 +34,6 @@ config.default_cursor_style = "SteadyBar"
 
 -- https://wezfurlong.org/wezterm/config/default-keys.html
 config.keys = {{
-    key = "c",
-    mods = "CTRL|SHIFT",
-    action = act {
-        CopyTo = "Clipboard"
-    }
-}, {
-    key = "v",
-    mods = "CTRL",
-    action = act {
-        PasteFrom = "Clipboard"
-    }
-}, {
     key = "U",
     mods = "CTRL|SHIFT",
     action = act.ActivateCopyMode
@@ -66,12 +54,6 @@ config.keys = {{
     mods = "CTRL|SHIFT",
     action = act {
         ActivateTabRelative = -1
-    }
-}, {
-    key = "w",
-    mods = "CTRL",
-    action = act.CloseCurrentTab {
-        confirm = true
     }
 }, {
     key = "0",
