@@ -33,7 +33,14 @@ config.default_prog = {"pwsh.exe", "-WorkingDirectory", string.format("C:\\Users
 config.default_cursor_style = "SteadyBar"
 
 -- https://wezfurlong.org/wezterm/config/default-keys.html
+
 config.keys = {{
+    key = "v",
+    mods = "CTRL",
+    action = act {
+        PasteFrom = "Clipboard"
+    }
+}, {
     key = "U",
     mods = "CTRL|SHIFT",
     action = act.ActivateCopyMode
