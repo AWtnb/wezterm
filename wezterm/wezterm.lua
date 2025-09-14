@@ -24,7 +24,7 @@ config.font_size = 14.0
 config.hide_tab_bar_if_only_one_tab = true
 
 -- https://wezfurlong.org/wezterm/colorschemes/index.html
-config.color_scheme = "Broadcast"
+config.color_scheme = "Material (base16)"
 
 config.disable_default_key_bindings = true
 config.use_ime = true
