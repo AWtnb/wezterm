@@ -45,6 +45,10 @@ config.keys = {{
     mods = "CTRL|SHIFT",
     action = act.ActivateCopyMode
 }, {
+    key = "U",
+    mods = "CTRL|SHIFT|ALT",
+    action = act.QuickSelect
+}, {
     key = "t",
     mods = "CTRL",
     action = act {
