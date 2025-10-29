@@ -1,25 +1,20 @@
 $config = Get-Content -Path $($PSScriptRoot | Join-Path -ChildPath "config.json") | ConvertFrom-Json
-$taskPath = $config.taskPath
-if (-not $taskPath.StartsWith("\")) {
-    $taskPath = "\" + $taskPath
-}
-if (-not $taskPath.EndsWith("\")) {
-    $taskPath = $taskPath + "\"
+$taskPath = ("\{0}\" -f $config.taskPath) -replace "^\\+", "\" -replace "\\+$", "\"
+
+$dest = $env:APPDATA | Join-Path -ChildPath $config.appDirName
+if (-not (Test-Path $dest -PathType Container)) {
+    New-Item -Path $dest -ItemType Directory > $null
 }
 
-$src = (Get-Command wezterm-gui.exe -ErrorAction SilentlyContinue).Source.Replace("shims", "apps\wezterm\current")
-if (-not (Test-Path $src)) {
-    "Wezterm not found." | Write-Host
-}
-else {
-    $action = New-ScheduledTaskAction -Execute $src
-    $trigger = New-ScheduledTaskTrigger -AtLogOn -User $env:USERNAME
-    $settings = New-ScheduledTaskSettingsSet -AllowStartIfOnBatteries -DontStopIfGoingOnBatteries
-    Register-ScheduledTask -TaskName "startup" `
-        -TaskPath $taskPath `
-        -Action $action `
-        -Trigger $trigger `
-        -Description "Run wezterm on startup." `
-        -Settings $settings `
-        -Force
-}
+$src = $PSScriptRoot | Join-Path -ChildPath "run.ps1" | Copy-Item -Destination $dest -PassThru
+
+$action = New-ScheduledTaskAction -Execute powershell.exe -Argument "-NoProfile -ExecutionPolicy Bypass -File `"$src`""
+$trigger = New-ScheduledTaskTrigger -AtLogOn -User $env:USERNAME
+$settings = New-ScheduledTaskSettingsSet -AllowStartIfOnBatteries -DontStopIfGoingOnBatteries
+Register-ScheduledTask -TaskName "startup" `
+    -TaskPath $taskPath `
+    -Action $action `
+    -Trigger $trigger `
+    -Description "Run wezterm on startup." `
+    -Settings $settings `
+    -Force
