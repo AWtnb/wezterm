@@ -5,6 +5,8 @@
 
 Run [`install.ps1`](./install.ps1) to create junction of `wezterm` to `.config` directory.
 
+Running [`ScheduledTask/install.ps1`](./ScheduledTask/install.ps1) registers scheduled task to run Wezterm at logon:
+
 Running [`set-startmenu.ps1`](./set-startmenu.ps1) makes start menu to edit this repository on VSCode.
 
 ---
