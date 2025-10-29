@@ -1,7 +1,7 @@
 function logWrite {
     $log = $input -join ""
     $log = (Get-Date -Format "yyyyMMdd-HH:mm:ss ") + $log
-    $log | Out-File -FilePath ($env:USERPROFILE | Join-Path -ChildPath "Desktop\Keyhac-startup-error.log") -Append
+    $log | Out-File -FilePath ($env:USERPROFILE | Join-Path -ChildPath "Desktop\Wezterm-startup-error.log") -Append
 }
 
 $src = (Get-Command wezterm-gui.exe -ErrorAction SilentlyContinue).Source
