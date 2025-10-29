@@ -4,7 +4,7 @@ function logWrite {
     $log | Out-File -FilePath ($env:USERPROFILE | Join-Path -ChildPath "Desktop\Keyhac-startup-error.log") -Append
 }
 
-$src = (Get-Command wezterm-gui.exe -ErrorAction SilentlyContinue).Source.Replace("shims", "apps\wezterm\current")
+$src = (Get-Command wezterm-gui.exe -ErrorAction SilentlyContinue).Source
 if (-not (Test-Path $src)) {
     "Wezterm not found." | logWrite
     [System.Environment]::exit(1)
