@@ -32,12 +32,12 @@ config.default_prog = {"pwsh.exe", "-WorkingDirectory", string.format("C:\\Users
 
 config.default_cursor_style = "SteadyBar"
 
--- https://wezfurlong.org/wezterm/config/default-keys.html
-
+-- https://wezterm.org/config/lua/config/quick_select_patterns.html
 config.quick_select_patterns = {
     '[-a-zA-Z0-9]{8,}',
 }
 
+-- https://wezfurlong.org/wezterm/config/default-keys.html
 config.keys = {{
     key = "v",
     mods = "CTRL",
