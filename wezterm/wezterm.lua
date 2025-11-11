@@ -7,7 +7,7 @@ end)
 local act = wezterm.action
 local config = {}
 
-config.font = wezterm.font_with_fallback({{
+config.font = wezterm.font_with_fallback({ {
     family = "PlemolJP Console",
     weight = "Medium"
 }, {
@@ -18,7 +18,7 @@ config.font = wezterm.font_with_fallback({{
     weight = "Regular"
 }, {
     family = "MS Gothic"
-}})
+} })
 
 config.font_size = 14.0
 config.hide_tab_bar_if_only_one_tab = true
@@ -28,7 +28,7 @@ config.color_scheme = "Material (base16)"
 
 config.disable_default_key_bindings = true
 config.use_ime = true
-config.default_prog = {"pwsh.exe", "-WorkingDirectory", string.format("C:\\Users\\%s\\Desktop", os.getenv("USERNAME"))}
+config.default_prog = { "pwsh.exe", "-WorkingDirectory", string.format("C:\\Users\\%s\\Desktop", os.getenv("USERNAME")) }
 
 config.default_cursor_style = "SteadyBar"
 
@@ -38,7 +38,7 @@ config.quick_select_patterns = {
 }
 
 -- https://wezfurlong.org/wezterm/config/default-keys.html
-config.keys = {{
+config.keys = { {
     key = "v",
     mods = "CTRL",
     action = act {
@@ -74,9 +74,9 @@ config.keys = {{
     key = "0",
     mods = "CTRL|ALT",
     action = act.ResetFontSize
-}}
+} }
 
-config.mouse_bindings = {{
+config.mouse_bindings = { {
     -- Bind 'Up' event of CTRL-Click to open hyperlinks
     event = {
         Up = {
@@ -110,6 +110,6 @@ config.mouse_bindings = {{
     },
     mods = "CTRL",
     action = act.DecreaseFontSize
-}}
+} }
 
 return config
