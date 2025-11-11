@@ -34,6 +34,10 @@ config.default_cursor_style = "SteadyBar"
 
 -- https://wezfurlong.org/wezterm/config/default-keys.html
 
+config.quick_select_patterns = {
+    '[-a-zA-Z0-9]{8,}',
+}
+
 config.keys = {{
     key = "v",
     mods = "CTRL",
