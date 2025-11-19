@@ -34,7 +34,7 @@ config.default_cursor_style = "SteadyBar"
 
 -- https://wezterm.org/config/lua/config/quick_select_patterns.html
 config.quick_select_patterns = {
-    '[-a-zA-Z0-9]{8,}',
+    '[-a-zA-Z0-9]{4,}',
 }
 
 -- https://wezfurlong.org/wezterm/config/default-keys.html
