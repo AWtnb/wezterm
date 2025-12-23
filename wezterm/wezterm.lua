@@ -59,6 +59,10 @@ config.keys = { {
         SpawnTab = "CurrentPaneDomain"
     }
 }, {
+    key = "0",
+    mods = "CTRL|ALT",
+    action = act.ResetFontSize
+}, {
     key = "Tab",
     mods = "CTRL",
     action = act {
