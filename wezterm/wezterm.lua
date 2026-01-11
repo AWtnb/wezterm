@@ -53,6 +53,36 @@ config.keys = { {
     mods = "CTRL|SHIFT|ALT",
     action = act.QuickSelect
 }, {
+    key = "T",
+    mods = "CTRL|SHIFT|ALT",
+    action = act {
+        SplitHorizontal = { domain = "CurrentPaneDomain" }
+    }
+}, {
+    key = "h",
+    mods = "CTRL|SHIFT|ALT",
+    action = act {
+        ActivatePaneDirection = "Left"
+    },
+}, {
+    key = "l",
+    mods = "CTRL|SHIFT|ALT",
+    action = act {
+        ActivatePaneDirection = "Right"
+    },
+}, {
+    key = "k",
+    mods = "CTRL|SHIFT|ALT",
+    action = act {
+        ActivatePaneDirection = "Up"
+    },
+}, {
+    key = "j",
+    mods = "CTRL|SHIFT|ALT",
+    action = act {
+        ActivatePaneDirection = "Down"
+    },
+}, {
     key = "t",
     mods = "CTRL",
     action = act {
