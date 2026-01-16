@@ -37,6 +37,8 @@ config.quick_select_patterns = {
     '[-a-zA-Z0-9]{4,}',
 }
 
+config.leader = { key = "p", mods = "CTRL", timeout_milliseconds = 2000 }
+
 -- https://wezfurlong.org/wezterm/config/default-keys.html
 config.keys = { {
     key = "v",
@@ -96,6 +98,18 @@ config.keys = { {
     key = "0",
     mods = "CTRL|ALT",
     action = act.ResetFontSize
+}, {
+    -- https://github.com/mozumasu/dotfiles/blob/0cc75c8ff6a62dd21651c320657c5075a71f000c/.config/wezterm/keymaps.lua#L222-L250
+    -- https://wezterm.org/config/lua/keyassignment/CopyMode/
+    key = "u",
+    mods = "LEADER",
+    action = wezterm.action_callback(function(window, pane)
+        window:perform_action(act.ActivateCopyMode, pane)
+        window:perform_action(act.CopyMode("MoveUp"), pane)
+        window:perform_action(act.CopyMode("MoveUp"), pane)
+        window:perform_action(act.CopyMode("MoveToEndOfLineContent"), pane)
+        window:perform_action(act.CopyMode({ SetSelectionMode = "Line" }), pane)
+    end),
 } }
 
 config.mouse_bindings = { {
