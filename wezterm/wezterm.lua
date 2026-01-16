@@ -47,14 +47,6 @@ config.keys = { {
         PasteFrom = "Clipboard"
     }
 }, {
-    key = "U",
-    mods = "CTRL|SHIFT",
-    action = act.ActivateCopyMode
-}, {
-    key = "U",
-    mods = "CTRL|SHIFT|ALT",
-    action = act.QuickSelect
-}, {
     key = "%",
     mods = "CTRL|SHIFT|ALT",
     action = act {
@@ -98,6 +90,15 @@ config.keys = { {
     key = "0",
     mods = "CTRL|ALT",
     action = act.ResetFontSize
+}, {
+    key = "U",
+    mods = "CTRL|SHIFT",
+    action = wezterm.action_callback(function(window, pane)
+        window:perform_action(act.ActivateCopyMode, pane)
+        window:perform_action(act.CopyMode("MoveToStartOfLine"), pane)
+        window:perform_action(act.CopyMode("MoveUp"), pane)
+        window:perform_action(act.CopyMode("MoveUp"), pane)
+    end),
 }, {
     -- https://github.com/mozumasu/dotfiles/blob/0cc75c8ff6a62dd21651c320657c5075a71f000c/.config/wezterm/keymaps.lua#L222-L250
     -- https://wezterm.org/config/lua/keyassignment/CopyMode/
