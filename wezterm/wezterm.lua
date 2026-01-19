@@ -53,14 +53,14 @@ config.keys = { {
         SplitHorizontal = { domain = "CurrentPaneDomain" }
     }
 }, {
-    key = "PageUp",
-    mods = "ALT",
+    key = "h",
+    mods = "CTRL|SHIFT|ALT",
     action = act {
         ActivatePaneDirection = "Left"
     },
 }, {
-    key = "PageDown",
-    mods = "ALT",
+    key = "l",
+    mods = "CTRL|SHIFT|ALT",
     action = act {
         ActivatePaneDirection = "Right"
     },
