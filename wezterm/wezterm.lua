@@ -98,18 +98,7 @@ config.keys = { {
         window:perform_action(act.ActivateCopyMode, pane)
         window:perform_action(act.CopyMode("MoveUp"), pane)
         window:perform_action(act.CopyMode("MoveUp"), pane)
-        window:perform_action(act.CopyMode("MoveToEndOfLineContent"), pane)
-    end),
-}, {
-    -- https://github.com/mozumasu/dotfiles/blob/0cc75c8ff6a62dd21651c320657c5075a71f000c/.config/wezterm/keymaps.lua#L222-L250
-    key = "u",
-    mods = "LEADER",
-    action = wezterm.action_callback(function(window, pane)
-        window:perform_action(act.ActivateCopyMode, pane)
-        window:perform_action(act.CopyMode("MoveUp"), pane)
-        window:perform_action(act.CopyMode("MoveUp"), pane)
-        window:perform_action(act.CopyMode("MoveToEndOfLineContent"), pane)
-        window:perform_action(act.CopyMode({ SetSelectionMode = "Line" }), pane)
+        window:perform_action(act.CopyMode("MoveToStartOfLineContent"), pane)
     end),
 } }
 
