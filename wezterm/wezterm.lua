@@ -28,7 +28,8 @@ config.color_scheme = "Material (base16)"
 
 config.disable_default_key_bindings = true
 config.use_ime = true
-config.default_prog = { "pwsh.exe", "-WorkingDirectory", string.format("C:\\Users\\%s\\Desktop", os.getenv("USERNAME")) }
+config.default_prog = { "pwsh.exe", "-noLogo", "-WorkingDirectory", string.format("C:\\Users\\%s\\Desktop",
+    os.getenv("USERNAME")) }
 
 config.default_cursor_style = "SteadyBar"
 
