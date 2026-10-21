@@ -38,63 +38,59 @@ config.quick_select_patterns = {
     '[-a-zA-Z0-9]{4,}',
 }
 
-config.leader = { key = "p", mods = "CTRL", timeout_milliseconds = 2000 }
+config.leader = { key = "Space", mods = "CTRL", timeout_milliseconds = 2000 }
 
 -- https://wezfurlong.org/wezterm/config/default-keys.html
 config.keys = { {
     key = "v",
-    mods = "CTRL",
+    mods = "LEADER",
     action = act {
         PasteFrom = "Clipboard"
     }
 }, {
-    key = "%",
-    mods = "CTRL|SHIFT|ALT",
+    key = "5",
+    mods = "LEADER",
     action = act {
         SplitHorizontal = { domain = "CurrentPaneDomain" }
     }
 }, {
     key = "h",
-    mods = "CTRL|SHIFT|ALT",
+    mods = "LEADER",
     action = act {
         ActivatePaneDirection = "Left"
     },
 }, {
     key = "l",
-    mods = "CTRL|SHIFT|ALT",
+    mods = "LEADER",
     action = act {
         ActivatePaneDirection = "Right"
     },
 }, {
     key = "t",
-    mods = "CTRL",
+    mods = "LEADER",
     action = act {
         SpawnTab = "CurrentPaneDomain"
     }
 }, {
     key = "0",
-    mods = "CTRL|ALT",
+    mods = "LEADER|CTRL",
     action = act.ResetFontSize
 }, {
-    key = "Tab",
-    mods = "CTRL",
+    key = "l",
+    mods = "LEADER|CTRL",
     action = act {
         ActivateTabRelative = 1
     }
 }, {
-    key = "Tab",
-    mods = "CTRL|SHIFT",
+    key = "h",
+    mods = "LEADER|CTRL",
     action = act {
         ActivateTabRelative = -1
     }
 }, {
-    key = "0",
-    mods = "CTRL|ALT",
-    action = act.ResetFontSize
-}, {
     -- https://wezterm.org/config/lua/keyassignment/CopyMode/
-    key = "U",
-    mods = "CTRL|SHIFT",
+    key = "u",
+    mods = "LEADER",
     action = wezterm.action_callback(function(window, pane)
         window:perform_action(act.ActivateCopyMode, pane)
         window:perform_action(act.CopyMode("MoveUp"), pane)
