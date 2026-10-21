@@ -48,6 +48,12 @@ config.keys = { {
         PasteFrom = "Clipboard"
     }
 }, {
+    key = "w",
+    mods = "CTRL|LEADER",
+    action = act {
+        CloseCurrentTab = { confirm = true }
+    }
+}, {
     key = "5",
     mods = "LEADER",
     action = act {
