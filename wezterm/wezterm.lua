@@ -103,6 +103,18 @@ config.keys = { {
         window:perform_action(act.CopyMode("MoveUp"), pane)
         window:perform_action(act.CopyMode("MoveToStartOfLineContent"), pane)
     end),
+}, {
+    key = "f",
+    mods = "LEADER",
+    action = wezterm.action_callback(function(window, pane)
+        window:perform_action(
+            act.SplitHorizontal({
+                domain = "CurrentPaneDomain",
+                args = { "xefm" },
+            }),
+            pane
+        )
+    end),
 } }
 
 config.mouse_bindings = { {
