@@ -1,8 +1,5 @@
 local wezterm = require "wezterm";
 
-wezterm.on("format-window-title", function()
-    return "PowerShell"
-end)
 
 local act = wezterm.action
 local config = {}
@@ -28,8 +25,8 @@ config.color_scheme = "Material (base16)"
 
 config.disable_default_key_bindings = true
 config.use_ime = true
-config.default_prog = { "pwsh.exe", "-noLogo", "-WorkingDirectory", string.format("C:\\Users\\%s\\Desktop",
-    os.getenv("USERNAME")) }
+config.default_prog = { "cmd.exe" }
+config.default_cwd = os.getenv("USERPROFILE") .. "\\Desktop"
 
 config.default_cursor_style = "SteadyBar"
 
