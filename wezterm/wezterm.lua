@@ -150,4 +150,12 @@ config.mouse_bindings = { {
     action = act.DecreaseFontSize
 } }
 
+local mux = wezterm.mux
+
+wezterm.on("gui-startup", function(cmd)
+    local _, pane, _ = mux.spawn_window(cmd or {})
+    wezterm.sleep_ms(500)
+    pane:send_text("nu")
+end)
+
 return config
