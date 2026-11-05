@@ -21,14 +21,12 @@ config.font_size = 14.0
 config.hide_tab_bar_if_only_one_tab = true
 
 -- https://wezfurlong.org/wezterm/colorschemes/index.html
-config.color_scheme = "Material (base16)"
+config.color_scheme = "Tango (base16)"
 
 config.disable_default_key_bindings = true
 config.use_ime = true
 config.default_prog = { "cmd.exe" }
 config.default_cwd = os.getenv("USERPROFILE") .. "\\Desktop"
-
-config.default_cursor_style = "SteadyBar"
 
 -- https://wezterm.org/config/lua/config/quick_select_patterns.html
 config.quick_select_patterns = {
