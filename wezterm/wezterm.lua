@@ -43,6 +43,12 @@ config.keys = { {
         PasteFrom = "Clipboard"
     }
 }, {
+    key = "c",
+    mods = "LEADER",
+    action = act {
+        CopyTo = "Clipboard"
+    }
+}, {
     key = "w",
     mods = "CTRL|LEADER",
     action = act {
