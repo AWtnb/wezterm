@@ -40,7 +40,7 @@ config.quick_select_patterns = {
 
 config.leader = { key = "Space", mods = "CTRL", timeout_milliseconds = 2000 }
 
--- https://wezfurlong.org/wezterm/config/default-keys.html
+-- https://wezterm.org/config/lua/keyassignment/index.html#available-key-assignments
 config.keys = { {
     key = "v",
     mods = "LEADER",
@@ -125,6 +125,13 @@ config.keys = { {
             pane
         )
     end),
+}, {
+    key = "f",
+    mods = "LEADER|CTRL",
+    action = act.SpawnCommandInNewTab({
+        domain = "CurrentPaneDomain",
+        args = { "xefm" },
+    }),
 } }
 
 config.mouse_bindings = { {
