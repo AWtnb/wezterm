@@ -21,8 +21,6 @@ config.font_size = 14.0
 config.hide_tab_bar_if_only_one_tab = true
 
 config.window_decorations = "RESIZE"
-config.initial_cols = 160
-config.initial_rows = 40
 
 config.default_cursor_style = "BlinkingBlock"
 config.cursor_blink_rate = 480
@@ -177,7 +175,8 @@ config.mouse_bindings = { {
 local mux = wezterm.mux
 
 wezterm.on("gui-startup", function(cmd)
-    local _, pane, _ = mux.spawn_window(cmd or {})
+    local _, pane, window = mux.spawn_window(cmd or {})
+    window:gui_window():maximize()
     wezterm.sleep_ms(500)
     pane:send_text("nu")
 end)
