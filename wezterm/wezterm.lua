@@ -30,6 +30,13 @@ config.cursor_blink_ease_out = "Constant"
 -- https://wezfurlong.org/wezterm/colorschemes/index.html
 config.color_scheme = "Tango (base16)"
 
+
+config.inactive_pane_hsb = {
+    saturation = 0.2,
+    brightness = 0.25,
+}
+
+
 config.disable_default_key_bindings = true
 config.use_ime = true
 config.default_prog = { "cmd.exe" }
