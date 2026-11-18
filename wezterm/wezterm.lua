@@ -185,7 +185,7 @@ wezterm.on("gui-startup", function(cmd)
     local _, pane, window = mux.spawn_window(cmd or {})
     window:gui_window():maximize()
     wezterm.sleep_ms(500)
-    pane:send_text("nu")
+    pane:send_text("nu --experimental-options=native-clip")
 end)
 
 return config
